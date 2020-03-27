@@ -7,6 +7,10 @@ const authorSchema = new Schema(
       type: String,
       required: true,
       trim: true
+    },
+    can_delete: {
+      type: Boolean,
+      default: true
     }
   },
   { versionKey: false }

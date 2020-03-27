@@ -5,7 +5,7 @@ export default class UserDao {
     return await User.findOne(conditions).select("-password");
   }
   static async getPassword(query: any) {
-    const user = await User.findOne(query).select("password"); // devuelve solo la contraseña.
+    const user = await User.findOne(query).select("password");
     return user && user.password;
   }
   static async createUser(query: any) {

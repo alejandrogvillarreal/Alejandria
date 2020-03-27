@@ -8,6 +8,10 @@ const genreSchema = new Schema(
       required: true,
       trim: true,
       unique: true
+    },
+    can_delete: {
+      type: Boolean,
+      default: true
     }
   },
   { versionKey: false }

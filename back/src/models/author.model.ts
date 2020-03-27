@@ -1,13 +1,31 @@
 import AuthorDao from "../dao/author.dao";
 import IAuthor from "../types/author";
+import BookModel from "../models/book.model";
 
 export default class AuthorModel {
+  static async authorHasBooks(author_id: string) {
+    const books = await BookModel.getBooksByAuthorWithDeleted(author_id);
+    return Boolean(books.length === 0) ? false : true;
+  }
+
+  static async setCanDelete(author: IAuthor | null) {
+    if (author && (await this.authorHasBooks(author._id))) {
+      author.can_delete = false;
+    }
+    return author;
+  }
+
   static async getAuthors() {
-    return await AuthorDao.getAuthors({});
+    const authors = await AuthorDao.getAuthors({});
+    const promisedAuthors = authors.map(
+      async author => await this.setCanDelete(author)
+    );
+    return await Promise.all(promisedAuthors);
   }
 
   static async getAuthor(author_id: string) {
-    return await AuthorDao.getAuthor({ _id: author_id });
+    const author = await AuthorDao.getAuthor({ _id: author_id });
+    return this.setCanDelete(author);
   }
 
   static async createAuthor(author: IAuthor) {
@@ -18,10 +36,18 @@ export default class AuthorModel {
     const conditions = { _id: author_id };
     const update = author;
     const options = { new: true };
-    return await AuthorDao.updateAuthor(conditions, update, options);
+    const editedAuthor = await AuthorDao.updateAuthor(
+      conditions,
+      update,
+      options
+    );
+    return this.setCanDelete(editedAuthor);
   }
 
   static async deleteAuthor(author_id: string) {
-    return await AuthorDao.deleteAuthor({ _id: author_id });
+    if (!(await this.authorHasBooks(author_id))) {
+      return await AuthorDao.deleteAuthor({ _id: author_id });
+    }
+    throw new Error("Author contains books");
   }
 }

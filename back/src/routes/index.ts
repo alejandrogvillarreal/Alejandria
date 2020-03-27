@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 
 /* Middlewares */
 import withAuth from "../middlewares/withAuth";
+import upload from "../services/multer";
 import validationMiddleware from "../middlewares/validation";
 const { ValidationRules, validate } = validationMiddleware;
 
@@ -12,6 +13,7 @@ import RoleController from "../controllers/role";
 import LoanStateController from "../controllers/loan_state";
 import AuthorController from "../controllers/author";
 import GenreController from "../controllers/genre";
+import BookController from "../controllers/book";
 
 const router = express.Router();
 router
@@ -47,6 +49,13 @@ router
   .get("/authors/:id", AuthorController.show)
   .put("/authors/:id", AuthorController.update)
   .delete("/authors/:id", AuthorController.remove)
+
+  /* Book */
+  .get("/books", BookController.get)
+  .post("/books", upload.single('image'), BookController.post)
+  .get("/books/:id", BookController.show)
+  .put("/books/:id", upload.single('image'), BookController.update)
+  .delete("/books/:id", BookController.remove)
 
   .get("/test", (req: Request, res: Response) => {
     return res.send("ok");
