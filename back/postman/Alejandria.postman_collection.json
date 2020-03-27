@@ -77,7 +77,7 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "prueba2@gmail.com",
+									"value": "prueba3@gmail.com",
 									"type": "text"
 								},
 								{
@@ -419,7 +419,7 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Genero 3",
+									"value": "Genero 5",
 									"type": "text"
 								}
 							],
@@ -513,7 +513,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/genres/5e7bf767d0fba844b60d90d8",
+							"raw": "http://localhost:8000/api/genres/5e7ce8f8e93ccf35c4ff63ae",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -522,7 +522,7 @@
 							"path": [
 								"api",
 								"genres",
-								"5e7bf767d0fba844b60d90d8"
+								"5e7ce8f8e93ccf35c4ff63ae"
 							]
 						}
 					},
@@ -582,7 +582,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/authors/5e7be4125aa92b2ecd18989d",
+							"raw": "http://localhost:8000/api/authors/5e7d4e1fc5167c2b56cf5a69",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -591,7 +591,7 @@
 							"path": [
 								"api",
 								"authors",
-								"5e7be4125aa92b2ecd18989d"
+								"5e7d4e1fc5167c2b56cf5a69"
 							]
 						}
 					},
@@ -619,7 +619,7 @@
 							"urlencoded": [
 								{
 									"key": "fullname",
-									"value": "Author",
+									"value": "Author6",
 									"type": "text"
 								}
 							],
@@ -713,7 +713,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/authors/5e7be42d5aa92b2ecd18989e",
+							"raw": "http://localhost:8000/api/authors/5e7d4283a028b51dfba5acfb",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -722,7 +722,302 @@
 							"path": [
 								"api",
 								"authors",
-								"5e7be42d5aa92b2ecd18989e"
+								"5e7d4283a028b51dfba5acfb"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "books.index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "books.show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/books/5e7d297c02847a08d2d803d1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"5e7d297c02847a08d2d803d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "books.store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "libro1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "desc1",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "available_stock",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/alejandro/Escritorio/Ale/Images/random/avatar-1.png",
+									"disabled": true
+								},
+								{
+									"key": "authors_ids",
+									"value": "5e7d4283a028b51dfba5acfb",
+									"type": "text"
+								},
+								{
+									"key": "authors_ids",
+									"value": "5e7d427aa028b51dfba5acf9",
+									"type": "text"
+								},
+								{
+									"key": "genres_ids",
+									"value": "5e7bf772d0fba844b60d90da",
+									"type": "text"
+								},
+								{
+									"key": "genres_ids",
+									"value": "5e7ce8fce93ccf35c4ff63af",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								},
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "books.update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "libro1 sinimg",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "desc1",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "available_stock",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/alejandro/Escritorio/Ale/Images/random/avatar-1.png"
+								},
+								{
+									"key": "authors_ids",
+									"value": "5e7ce8c2e93ccf35c4ff63aa",
+									"type": "text"
+								},
+								{
+									"key": "authors_ids",
+									"value": "5e7ce8c5e93ccf35c4ff63ab",
+									"type": "text"
+								},
+								{
+									"key": "genres_ids",
+									"value": "5e7bf772d0fba844b60d90da",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "genres_ids",
+									"value": "5e7ce8f5e93ccf35c4ff63ad",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								},
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/books/5e7d18b9c837816fceb977e4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"5e7d18b9c837816fceb977e4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "books.delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/books/5e7d276fd1991204f5a332d3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"5e7d276fd1991204f5a332d3"
 							]
 						}
 					},

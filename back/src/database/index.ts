@@ -9,7 +9,6 @@ export async function startConnection() {
       useFindAndModify: false,
       useUnifiedTopology: true,
       autoIndex: false
-      //config que evita errores en la consola
     });
     console.log("DB connected");
   } catch (error) {
