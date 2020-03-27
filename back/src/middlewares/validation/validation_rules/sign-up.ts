@@ -11,7 +11,6 @@ export default [
       return true;
     }),
   check("password").custom(value => {
-    console.log("value", value);
     if (value.length === 0) throw new Error(IS_REQUIRED);
     if (value.length < 6) throw new Error(TOO_SHORT);
     return true;

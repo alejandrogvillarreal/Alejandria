@@ -1,13 +1,12 @@
-import AuthorModel from "../../models/author.model";
+import BookModel from '../../models/book.model';
 import { Request, Response } from "express";
 
 export default async (req: Request, res: Response) => {
   try {
-    const author_id = req.params.id;
-    const author = await AuthorModel.getAuthor(author_id);
+    const books = await BookModel.getBooks();
     return res.status(200).send({
       success: true,
-      author
+      books
     });
   } catch (err) {
     return res.status(400).send({

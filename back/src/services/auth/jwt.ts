@@ -8,7 +8,6 @@ const { jwt_expiration: expiration_time, jwt_secret: secret } = jwtConstants;
 const getJWT = (user: IUser | null) => {
   const jwtOptions = {
     expiresIn: expiration_time
-    // expiresIn: 3600, // 1 hour
   };
 
   const userObject = {
