@@ -43,14 +43,6 @@ export default class LoanModel {
   ];
 
   static async createLoan(loan: ILoanRequest, userId: string) {
-    // if (!Array.isArray(loan.books_ids))
-    //   throw new Error("books_ids is not array");
-    // const authorsIdsDuplicated = Boolean(loan.books_ids.length > 1)
-    //   ? hasDuplicates(loan.books_ids)
-    //   : false;
-    // // TODO: las validaciones meterlas en el middleware de validacion deupués
-    // if (authorsIdsDuplicated) throw new Error("books_ids duplicated");
-
     const books = loan.books_ids || [];
 
     const booksHaveStock = await BookModel.BooksHaveStock(books);

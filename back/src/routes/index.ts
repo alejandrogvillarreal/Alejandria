@@ -39,28 +39,45 @@ router
 
   /* Genres */
   .get("/genres", GenreController.get)
-  .post("/genres", GenreController.post)
+  .post("/genres", ValidationRules.genre, validate, GenreController.post)
   .get("/genres/:id", GenreController.show)
-  .put("/genres/:id", GenreController.update)
+  .put("/genres/:id", ValidationRules.genre, validate, GenreController.update)
   .delete("/genres/:id", GenreController.remove)
 
   /* Authors */
   .get("/authors", AuthorController.get)
-  .post("/authors", AuthorController.post)
+  .post("/authors", ValidationRules.author, validate, AuthorController.post)
   .get("/authors/:id", AuthorController.show)
-  .put("/authors/:id", AuthorController.update)
+  .put(
+    "/authors/:id",
+    ValidationRules.author,
+    validate,
+    AuthorController.update
+  )
   .delete("/authors/:id", AuthorController.remove)
 
   /* Book */
   .get("/books", BookController.get)
-  .post("/books", upload.single("image"), BookController.post)
+  .post(
+    "/books",
+    upload.single("image"),
+    ValidationRules.book,
+    validate,
+    BookController.post
+  )
   .get("/books/:id", BookController.show)
-  .put("/books/:id", upload.single("image"), BookController.update)
+  .put(
+    "/books/:id",
+    upload.single("image"),
+    ValidationRules.book,
+    validate,
+    BookController.update
+  )
   .delete("/books/:id", BookController.remove)
 
   /* Loan */
   .get("/loans", LoanController.get)
-  .post("/loans", LoanController.post)
+  .post("/loans", ValidationRules.loan, validate, LoanController.post)
   .get("/loans/:id", LoanController.show)
   .put("/loans/:id", LoanController.update)
 
