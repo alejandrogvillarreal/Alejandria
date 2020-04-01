@@ -19,21 +19,6 @@ export default class BookModel {
   ];
 
   static async createBook(book: IBookRequest, file: any) {
-    if (!Array.isArray(book.authors_ids))
-      throw new Error("authors_ids is not array");
-    if (!Array.isArray(book.genres_ids))
-      throw new Error("genres_ids is not array");
-
-    const authorsIdsDuplicated = Boolean(book.authors_ids.length > 1)
-      ? hasDuplicates(book.authors_ids)
-      : false;
-    const genresIdsDuplicated = Boolean(book.genres_ids.length > 1)
-      ? hasDuplicates(book.genres_ids)
-      : false;
-    // TODO: las validaciones meterlas en el middleware de validacion deupués
-    if (authorsIdsDuplicated) throw new Error("authors_ids duplicated");
-    if (genresIdsDuplicated) throw new Error("genres_ids duplicated");
-
     const genres = book.genres_ids || [];
     const authors = book.authors_ids || [];
     const newBook = {
