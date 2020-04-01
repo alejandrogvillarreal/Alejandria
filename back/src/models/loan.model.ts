@@ -56,12 +56,9 @@ export default class LoanModel {
     const booksHaveStock = await BookModel.BooksHaveStock(books);
     if (!booksHaveStock) throw new Error("Books unavailable");
 
-    const pendingState = await LoanStateModel.getLoanState("1");
-
-    const newLoan = {
+    const createdLoan = await LoanDao.createLoan({
       books: books
-    };
-    const createdLoan = await LoanDao.createLoan(newLoan);
+    });
 
     // update books stock
     const books_conditions = { _id: { $in: books } };
@@ -70,6 +67,7 @@ export default class LoanModel {
     await BookDao.updateBooks(books_conditions, book_update, options_book);
 
     // update loan
+    const pendingState = await LoanStateModel.getLoanState("1");
     const conditions = { _id: createdLoan._id };
     const update = {
       loan_state: pendingState && pendingState._id,
@@ -89,7 +87,7 @@ export default class LoanModel {
       {
         path: "user",
         model: "User",
-        select: "-password",
+        select: "-password"
       },
       {
         path: "loan_state",

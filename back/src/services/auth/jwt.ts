@@ -5,13 +5,6 @@ import IUser from "../../types/user";
 const { jwt: jwtConstants } = constants;
 const { jwt_expiration: expiration_time, jwt_secret: secret } = jwtConstants;
 
-interface IJwtVerify extends Object {
-  userId: string;
-  email: string;
-  iat: number;
-  exp: number;
-}
-
 const getJWT = (user: IUser | null) => {
   const jwtOptions = {
     expiresIn: expiration_time

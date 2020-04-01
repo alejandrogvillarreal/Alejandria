@@ -63,7 +63,6 @@ router
   .post("/loans", LoanController.post)
   .get("/loans/:id", LoanController.show)
   .put("/loans/:id", LoanController.update)
-  // .delete("/loans/:id", LoanController.remove)
 
   .get("/test", (req: Request, res: Response) => {
     return res.send("ok");
