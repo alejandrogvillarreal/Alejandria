@@ -1,6 +1,6 @@
-import jwt from './jwt'
+import jwt from "./jwt";
 
 export default {
-    getJWT: jwt.getJWT,
-    authenticateJWT: jwt.authenticateJWT,
-}
+  getJWT: jwt.getJWT,
+  authenticateJWT: jwt.authenticateJWT
+};

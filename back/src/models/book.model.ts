@@ -128,4 +128,14 @@ export default class BookModel {
     const conditions = { authors: author_id };
     return await BookDao.getBooks(conditions);
   }
+
+  static async BooksHaveStock(books_ids: string[]) {
+    const books = await BookDao.getBooks({
+      _id: books_ids,
+      is_deleted: false,
+      available_stock: { $gte: 1 }
+    });
+    if (books.length !== books_ids.length) return false;
+    else return true;
+  }
 }
