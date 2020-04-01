@@ -14,6 +14,7 @@ import LoanStateController from "../controllers/loan_state";
 import AuthorController from "../controllers/author";
 import GenreController from "../controllers/genre";
 import BookController from "../controllers/book";
+import LoanController from "../controllers/loan";
 
 const router = express.Router();
 router
@@ -52,10 +53,17 @@ router
 
   /* Book */
   .get("/books", BookController.get)
-  .post("/books", upload.single('image'), BookController.post)
+  .post("/books", upload.single("image"), BookController.post)
   .get("/books/:id", BookController.show)
-  .put("/books/:id", upload.single('image'), BookController.update)
+  .put("/books/:id", upload.single("image"), BookController.update)
   .delete("/books/:id", BookController.remove)
+
+  /* Loan */
+  .get("/loans", LoanController.get)
+  .post("/loans", LoanController.post)
+  .get("/loans/:id", LoanController.show)
+  .put("/loans/:id", LoanController.update)
+  // .delete("/loans/:id", LoanController.remove)
 
   .get("/test", (req: Request, res: Response) => {
     return res.send("ok");

@@ -5,6 +5,13 @@ import IUser from "../../types/user";
 const { jwt: jwtConstants } = constants;
 const { jwt_expiration: expiration_time, jwt_secret: secret } = jwtConstants;
 
+interface IJwtVerify extends Object {
+  userId: string;
+  email: string;
+  iat: number;
+  exp: number;
+}
+
 const getJWT = (user: IUser | null) => {
   const jwtOptions = {
     expiresIn: expiration_time
@@ -19,8 +26,8 @@ const getJWT = (user: IUser | null) => {
   // return jwt.sign(userObject, process.env.SECRET, jwtOptions);
 };
 
-const authenticateJWT = async (token: string, cb: any) => {
-  jwt.verify(token, secret, cb);
+const authenticateJWT = (token: string) => {
+  return jwt.verify(token, secret);
 };
 
 export default { getJWT, authenticateJWT };
