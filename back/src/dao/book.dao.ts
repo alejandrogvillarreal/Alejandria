@@ -23,4 +23,14 @@ export default class BookDao {
       populate
     );
   }
+  static async updateBooks(
+    conditions: any,
+    update: any,
+    options: any,
+    populate?: any
+  ) {
+    return await Book.updateMany(conditions, update, options).populate(
+      populate
+    );
+  }
 }

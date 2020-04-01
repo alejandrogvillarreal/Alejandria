@@ -19,8 +19,8 @@ const getJWT = (user: IUser | null) => {
   // return jwt.sign(userObject, process.env.SECRET, jwtOptions);
 };
 
-const authenticateJWT = async (token: string, cb: any) => {
-  jwt.verify(token, secret, cb);
+const authenticateJWT = (token: string) => {
+  return jwt.verify(token, secret);
 };
 
 export default { getJWT, authenticateJWT };

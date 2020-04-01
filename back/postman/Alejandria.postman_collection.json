@@ -513,7 +513,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/genres/5e7ce8f8e93ccf35c4ff63ae",
+							"raw": "http://localhost:8000/api/genres/5e7bf76ed0fba844b60d90d9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -522,7 +522,7 @@
 							"path": [
 								"api",
 								"genres",
-								"5e7ce8f8e93ccf35c4ff63ae"
+								"5e7bf76ed0fba844b60d90d9"
 							]
 						}
 					},
@@ -789,7 +789,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/books/5e7d297c02847a08d2d803d1",
+							"raw": "http://localhost:8000/api/books/5e7d42a7a028b51dfba5acfd",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -798,7 +798,7 @@
 							"path": [
 								"api",
 								"books",
-								"5e7d297c02847a08d2d803d1"
+								"5e7d42a7a028b51dfba5acfd"
 							]
 						}
 					},
@@ -940,12 +940,12 @@
 								},
 								{
 									"key": "authors_ids",
-									"value": "5e7ce8c2e93ccf35c4ff63aa",
+									"value": "5e7d4278a028b51dfba5acf8",
 									"type": "text"
 								},
 								{
 									"key": "authors_ids",
-									"value": "5e7ce8c5e93ccf35c4ff63ab",
+									"value": "5e7d4283a028b51dfba5acfb",
 									"type": "text"
 								},
 								{
@@ -968,7 +968,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/books/5e7d18b9c837816fceb977e4",
+							"raw": "http://localhost:8000/api/books/5e7d47854ab6e124925a8833",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -977,7 +977,7 @@
 							"path": [
 								"api",
 								"books",
-								"5e7d18b9c837816fceb977e4"
+								"5e7d47854ab6e124925a8833"
 							]
 						}
 					},
@@ -1018,6 +1018,190 @@
 								"api",
 								"books",
 								"5e7d276fd1991204f5a332d3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Loans",
+			"item": [
+				{
+					"name": "loans.index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/loans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"loans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loans.show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/loans/5e83dae891d752287ad023f8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"loans",
+								"5e83dae891d752287ad023f8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loans.store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "books_ids",
+									"value": "5e7d47854ab6e124925a8833",
+									"type": "text"
+								},
+								{
+									"key": "books_ids",
+									"value": "5e7d477d4ab6e124925a8832",
+									"type": "text"
+								},
+								{
+									"key": "books_ids",
+									"value": "5e7d577b4d7d5335fa645d21",
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								},
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/loans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"loans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loans.update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "loan_state_scope_id",
+									"value": "3",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								},
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/loans/5e83dae891d752287ad023f8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"loans",
+								"5e83dae891d752287ad023f8"
 							]
 						}
 					},

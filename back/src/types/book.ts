@@ -8,8 +8,8 @@ export default interface IBook extends Document {
   quantity: number;
   available_stock: number;
   image: string | null;
-  book_author: string[] | IAuthor[];
-  book_genres: string[] | IGenre[];
+  authors: string[] | IAuthor[];
+  genres: string[] | IGenre[];
 }
 
 export interface IBookRequest extends IBook {
