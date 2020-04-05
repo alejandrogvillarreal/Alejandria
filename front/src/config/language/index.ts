@@ -9,6 +9,9 @@ export const languages = {
     menuGenres: "Genres",
     menuLoans: "Loans",
     menuUsers: "Users",
+    menuHistory: "History",
+    menuAccount: "Account",
+    menuSearch: "Search",
     oopsPageNotFound: "Oops Page not found",
     dashboard: "Dashboard",
     administration: "Administration",
@@ -16,7 +19,12 @@ export const languages = {
     authors: "Authors",
     genres: "Genres",
     loans: "Loans",
-    users: "Users"
+    users: "Users",
+    history: "History",
+    account: "Account",
+    search: "Search",
+    save: "Save",
+    cancel: "Cancel",
   },
   es: {
     menuDashboard: "Dashboard",
@@ -26,6 +34,9 @@ export const languages = {
     menuGenres: "Generos",
     menuLoans: "Prestamos",
     menuUsers: "Usuarios",
+    menuHistory: "Historial",
+    menuAccount: "Cuenta",
+    menuSearch: "Buscar",
     oopsPageNotFound: "Oops Página no encontrada",
     dashboard: "Dashboard",
     administration: "Administración",
@@ -33,7 +44,12 @@ export const languages = {
     authors: "Autores",
     genres: "Generos",
     loans: "Prestamos",
-    users: "Usuarios"
+    users: "Usuarios",
+    history: "Historial",
+    account: "Cuenta",
+    search: "Buscar",
+    save: "Guardar",
+    cancel: "Cancelar",
   }
 };
 

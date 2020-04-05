@@ -6,8 +6,8 @@ export const FormContainer = styled.div`
     margin-top: 20px;
 `
 
-export const StyledDiv = styled.div`
-    margin: ${({ margin }) => margin || 0};
+export const ButtonContainer = styled.div`
+    margin: 20px 0;
 `
 
 export const LinksContainer = styled.div`

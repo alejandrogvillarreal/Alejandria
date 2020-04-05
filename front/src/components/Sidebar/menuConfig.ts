@@ -1,4 +1,4 @@
-import { Dashboard, Settings } from "@material-ui/icons";
+import { Dashboard, Settings, Description, AccountCircle, Search } from "@material-ui/icons";
 
 let menuConfig = (lang: any) => [
   {
@@ -6,6 +6,11 @@ let menuConfig = (lang: any) => [
     path: "/dashboard",
     icon: Dashboard,
     // permissionsRequired: []
+  },
+  {
+    label: lang.menuSearch,
+    path: "/dashboard/search",
+    icon: Search,
   },
   {
     label: lang.menuAdministration,
@@ -38,7 +43,26 @@ let menuConfig = (lang: any) => [
       }
     ],
     isRequiredBeAdmin: true
-  }
+  },
+  {
+    label: lang.menuHistory,
+    icon: Description,
+    subMenus: [
+      {
+        label: lang.menuBooks,
+        path: "/dashboard/history/loans",
+      },
+      {
+        label: lang.menuAuthors,
+        path: "/dashboard/history/books",
+      }
+    ],
+  },
+  {
+    label: lang.menuAccount,
+    path: "/dashboard/account",
+    icon: AccountCircle,
+  },
 ];
 
 export default menuConfig;

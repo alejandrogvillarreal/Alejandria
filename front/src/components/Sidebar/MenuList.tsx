@@ -5,6 +5,7 @@ import classNames from "classnames";
 import { languageContext } from "../../config/language";
 import menuConfig from "./menuConfig";
 
+// Material Ui
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -14,27 +15,35 @@ import Collapse from "@material-ui/core/Collapse";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 
+// styles
+import { BLACK, BLUE } from "../../styles";
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      width: "100%"
+      width: "100%",
     },
     nested: {
-      paddingLeft: theme.spacing(12)
+      paddingLeft: theme.spacing(12),
     },
     item: {
       textDecoration: "none",
-      color: "rgba(0, 0, 0, 0.87);"
+      color: "rgba(0, 0, 0, 0.87);",
     },
     menuItem: {
-      color: "black"
+      color: BLACK,
+      borderLeft: `4px solid white`,
+    },
+    menuItemActive: {
+      color: BLACK,
+      borderLeft: `4px solid ${BLUE}`,
     },
     menuIconSelected: {
-      color: "blue"
+      color: BLUE,
     },
     subMenuItem: {
-      color: "blue"
-    }
+      color: BLUE,
+    },
   })
 );
 
@@ -50,7 +59,7 @@ const MenuList = (props: any) => {
   const handleSubMenusOpen = (key: any) => {
     setSubMenusOpen({
       ...subMenusOpen,
-      [key]: !subMenusOpen[key]
+      [key]: !subMenusOpen[key],
     });
   };
 
@@ -61,24 +70,29 @@ const MenuList = (props: any) => {
 
     if (isSubMenu) {
       menuItemClasses = classNames({
-        [classes.nested]: "nested"
+        [classes.nested]: "nested",
       });
       if (activeRoute(props.path)) {
         menuItemClasses = classNames({
           [classes.nested]: "nested",
-          [classes.subMenuItem]: "submenu"
+          [classes.subMenuItem]: "submenu",
         });
       }
     }
-    if (!isSubMenu && activeRoute(props.path)) {
+    if (!isSubMenu) {
       menuItemClasses = classNames({
-        [classes.menuItem]: "menu"
+        [classes.menuItem]: "menu",
       });
+      if (activeRoute(props.path)) {
+        menuItemClasses = classNames({
+          [classes.menuItemActive]: "menuActive",
+        });
+      }
     }
 
     return (
       <NavLink
-        onClick={e => disabled && e.preventDefault()}
+        onClick={(e) => disabled && e.preventDefault()}
         to={props.path}
         // className={disabled ? " disabled" : "" }
         className={classes.item}
@@ -115,7 +129,7 @@ const MenuList = (props: any) => {
     return (
       <span>
         <ListItem
-          className={active ? classes.menuItem : ""}
+          className={active ? classes.menuItemActive : classes.menuItem}
           button
           onClick={() => handleSubMenusOpen(props.label)}
         >

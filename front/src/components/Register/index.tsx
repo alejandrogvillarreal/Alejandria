@@ -7,7 +7,7 @@ import CommonTextField from "../Common/TextField";
 import AuthPage from "../Common/AuthPage";
 
 // styled components
-import { FormContainer, StyledDiv, LinksContainer } from "./Register.styles";
+import { FormContainer, ButtonContainer, LinksContainer } from "./Register.styles";
 
 export default function Register() {
   return (
@@ -42,14 +42,14 @@ export default function Register() {
           name="password"
           value={"ale"}
         />
-        <StyledDiv margin={"20px 0"}>
+        <ButtonContainer>
           <CommonButton
             color={"primary"}
             fullWidth={true}
             text={"Sign Up"}
             onClick={() => console.log("login")}
           />
-        </StyledDiv>
+        </ButtonContainer>
         <LinksContainer>
           <Link to="/login">{"Already have an account? Sign in"}</Link>
         </LinksContainer>
