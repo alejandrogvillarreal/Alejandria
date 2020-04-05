@@ -15,7 +15,6 @@ export const TitleContainer = styled.div`
   align-items: center;
   color: white;
   padding-left: 20px;
-  //font-family: 'Lato-Light';
   //font-size: 16px;
   @media (min-width: 600px){
     height: 64px;
