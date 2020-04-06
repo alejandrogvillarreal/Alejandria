@@ -39,3 +39,12 @@ export const ENABLED = '#8DC53F';
 export const DISABLED = '#C44D4D';
 
 export const BLACK = '#000000';
+
+export const YELLOW = '#EBF150';
+
+export const STATES_COLORS = {
+    '1': DISABLED, //Pendientes de devolución
+    '2': YELLOW, //Pendientes de aprobación
+    '3': GREEN, //Devueltos
+    '4': BLACK, //Cancelados
+}
