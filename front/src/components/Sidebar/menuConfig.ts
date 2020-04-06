@@ -50,11 +50,11 @@ let menuConfig = (lang: any) => [
     subMenus: [
       {
         label: lang.menuBooks,
-        path: "/dashboard/history/loans",
+        path: "/dashboard/history/books",
       },
       {
-        label: lang.menuAuthors,
-        path: "/dashboard/history/books",
+        label: lang.menuLoans,
+        path: "/dashboard/history/loans",
       }
     ],
   },

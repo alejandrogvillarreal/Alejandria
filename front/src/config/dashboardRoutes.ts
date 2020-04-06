@@ -1,6 +1,11 @@
 import Books from "../components/Books";
+import SearchPage from "../components/SearchPage";
 
 export default [
+  {
+    path: "/dashboard/search",
+    component: SearchPage,
+  },
   {
     path: "/dashboard/administration/books",
     component: Books,
